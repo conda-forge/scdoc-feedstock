@@ -23,4 +23,4 @@ else
     HOST_SCDOC="${SRC_DIR}/scdoc"
 fi
 
-make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}
+make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX} HOST_SCDOC=${HOST_SCDOC}

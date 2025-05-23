@@ -9,7 +9,7 @@ if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 1 ]]; then
 
     LDFLAGS=${LDFLAGS//${PREFIX}/${BUILD_PREFIX}}
     CC=${CC_FOR_BUILD}
-    LD=${LD_FOR_BUILD}
+    unset LD
 
     make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}
 

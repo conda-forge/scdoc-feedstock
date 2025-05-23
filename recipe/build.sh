@@ -11,15 +11,13 @@ if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 1 ]]; then
     CC=${CC_FOR_BUILD}
     unset LD
 
-    make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}
+    make install LDFLAGS="${LDFLAGS}" PREFIX=${BUILD_PREFIX}
 
     LDFLAGS="${CROSS_LDFLAGS}"
     CC=${CROSS_CC}
     LD=${CROSS_LD}
-    
-    HOST_SCDOC=${BUILD_PREFIX}/bin/scdoc
-else
-    HOST_SCDOC="${SRC_DIR}/scdoc"
+
+    sed -i "s?\$\(HOST_SCDOC\) <?${BUILD_PREFIX}/bin/scdoc?" Makefile
 fi
 
-make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX} HOST_SCDOC=${HOST_SCDOC}
+make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}

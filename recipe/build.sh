@@ -14,7 +14,6 @@ if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 1 ]]; then
     make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}
 
     LDFLAGS="${CROSS_LDFLAGS}"
-    LDFLAGS="${CROSS_LDFLAGS}"
     CC=${CROSS_CC}
     LD=${CROSS_LD}
     

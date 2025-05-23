@@ -19,6 +19,7 @@ requirements:
     - ${{ stdlib('c') }}
     - make
     - pkg-config
+    - sed
   host:
     - ncurses
 

@@ -18,7 +18,7 @@ if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 1 ]]; then
     CC=${CROSS_CC}
     LD=${CROSS_LD}
 
-    sed -i "s?\$\(HOST_SCDOC\) <?${BUILD_PREFIX}/bin/scdoc?" Makefile
+    sed -i "s?\$(HOST_SCDOC) <?${BUILD_PREFIX}/bin/scdoc <?" Makefile
 fi
 
 make install LDFLAGS="${LDFLAGS}" PREFIX=${PREFIX}

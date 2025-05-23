@@ -12,6 +12,7 @@ if [[ ${CONDA_BUILD_CROSS_COMPILATION:-0} == 1 ]]; then
     unset LD
 
     make install LDFLAGS="${LDFLAGS}" PREFIX=${BUILD_PREFIX}
+    make clean
 
     LDFLAGS="${CROSS_LDFLAGS}"
     CC=${CROSS_CC}

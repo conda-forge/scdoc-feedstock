@@ -10,7 +10,7 @@ source:
   sha256: 98780bbdf16c1bce89ef3a8c0f537ac6e4ea77087b609e7698857614488a2a62
 
 build:
-  number: 0
+  number: 1
   skip: win
 
 requirements:
@@ -18,7 +18,7 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
     - make
-    - pkg-config
+    - pkgconf
     - sed
   host:
     - ncurses
